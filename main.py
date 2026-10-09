@@ -102,7 +102,7 @@ class Computer(Device, INetworkable):
 
     def disconnect(self) -> None:
         self._is_connected = False
-
+        self._ip_address = None
     @property
     def is_connected(self) -> bool:
         return self._is_connected
