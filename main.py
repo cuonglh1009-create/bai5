@@ -201,6 +201,9 @@ class LabRoom:
     def add_device(self, device: Device) -> None:
         if device is None:
             raise ValueError("Không chấp nhận thiết bị null")
+for d in self._devices:
+        if d.device_id == device.device_id:
+            raise ValueError(f"Đã tồn tại thiết bị mã {device.device_id} trong phòng")
         self._devices.append(device)
 
     def remove_device(self, device_id: str) -> bool:
