@@ -222,12 +222,7 @@ for d in self._devices:
     def calculate_annual_maintenance_cost(self) -> float:
         total = 0.0
         for device in self._devices:
-            if isinstance(device, Computer):
-                total += device.calculate_annual_maintenance_cost()
-            elif isinstance(device, Printer):
-                total += device.calculate_annual_maintenance_cost()
-            elif isinstance(device, Projector):
-                total += device.calculate_annual_maintenance_cost()
+        total += device.calculate_annual_maintenance_cost()
         return total
 
     def get_devices_requiring_maintenance(self) -> List[Device]:
