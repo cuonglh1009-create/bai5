@@ -225,6 +225,7 @@ class LabRoom:
         for device in self._devices:
             total += device.calculate_annual_maintenance_cost()
         return total
+    
     def get_devices_requiring_maintenance(self) -> List[Device]:
         result = []
         for device in self._devices:
