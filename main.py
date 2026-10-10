@@ -222,16 +222,14 @@ class LabRoom:
     def calculate_annual_maintenance_cost(self) -> float:
         total = 0.0
         for device in self._devices:
-        total += device.calculate_annual_maintenance_cost()
+            total += device.calculate_annual_maintenance_cost()
         return total
-
-    def get_devices_requiring_maintenance(self) -> List[Device]:
-        result = []
-        for device in self._devices:
-            if device.status == DeviceStatus.UnderMaintenance:
-                or device.years_in_use() > 5):
-                result.append(device)
-        return result
+def get_devices_requiring_maintenance(self) -> List[Device]:
+    result = []
+    for device in self._devices:
+        if device.status == DeviceStatus.UnderMaintenance or device.years_in_use() > 5:
+            result.append(device)
+    return result
 
     def list_devices(self) -> None:
         print(f"\n=== Phòng {self.room_id} - {self.name} (Sức chứa: {self.capacity}) ===")
