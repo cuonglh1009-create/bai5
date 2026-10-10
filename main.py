@@ -226,7 +226,7 @@ class LabRoom:
             total += device.calculate_annual_maintenance_cost()
         return total
     def get_devices_requiring_maintenance(self) -> List[Device]:
-         result = []
+        result = []
         for device in self._devices:
             if device.status == DeviceStatus.UnderMaintenance or device.years_in_use() > 5:
                 result.append(device)
