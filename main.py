@@ -229,6 +229,7 @@ for d in self._devices:
         result = []
         for device in self._devices:
             if device.status == DeviceStatus.UnderMaintenance:
+                or device.years_in_use() > 5):
                 result.append(device)
         return result
 
